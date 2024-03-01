@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border list-none p-0 m-0 scroll-smooth;
+  }
+
+  body {
+    @apply bg-primary-dark text-white min-h-screen;
+  }
+}
+
+@layer components {
+  .navlink {
+    @apply text-white p-1 rounded-md flex items-center gap-2 cursor-pointer py-2 hover:bg-[#1e092a] transition-colors  duration-200 ease-in-out;
+  }
+}

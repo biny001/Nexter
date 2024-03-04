@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Ressidebar from "./RessideBar";
+import Search from "./Search";
 
 const AppLayout = () => {
   return (
@@ -12,8 +13,12 @@ const AppLayout = () => {
 
       <Ressidebar />
 
+      <Search />
+
       <div className="col-span-5 md:col-span-4  bg-black ">
-        <Outlet />
+        <div className=" flex items-center justify-center h-full">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

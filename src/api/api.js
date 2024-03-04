@@ -1,21 +1,26 @@
 import { authkey } from "./config.js";
-export const options = {
+const options = {
   method: "GET",
-  Headers: {
+  headers: {
     accept: "application/json",
     Authorization: `Bearer ${authkey}`,
   },
 };
-
-export async function getMovies() {
+export const fetchData = async () => {
   try {
-    const moviedata = await fetch(
+    const response = await fetch(
       "https://api.themoviedb.org/3/trending/movie/week?language=en-US",
       options
     );
-    console.log(moviedata);
-    return moviedata;
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch movies. Status: ${response.status}`);
+    }
+
+    const { results } = await response.json();
+    console.log(results);
+    return results;
   } catch (err) {
-    console.log("couldnt fetch movie data");
+    console.error("Error fetching movies:", err);
   }
-}
+};

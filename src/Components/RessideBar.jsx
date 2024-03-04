@@ -8,8 +8,8 @@ const Ressidebar = () => {
     <>
       <div
         onClick={() => setIsopen(!isopen)}
-        className={`absolute cursor-pointer transition-colors duration-300 ease-in-out p-1 rounded-full   hover:bg-purple-900 ${
-          isopen ? "left-[130px] z-[1000] top-3" : "left-3 top-3  "
+        className={` z-[10000] absolute cursor-pointer transition-colors duration-300 ease-in-out p-1 rounded-full   hover:bg-purple-900 ${
+          isopen ? "left-[130px] z-[100000] top-3" : "left-3 top-3  "
         }`}
       >
         <img
@@ -22,7 +22,7 @@ const Ressidebar = () => {
         />
       </div>
       <div
-        className={`md:hidden bg-primary-dark absolute h-full z-[500] transition-all duration-300 ease-in-out px-4 py-10 flex flex-col shadow-right-xl gap-4 ${
+        className={`md:hidden bg-primary-dark absolute h-full z-[1000] transition-all duration-300 ease-in-out px-4 py-10 flex flex-col shadow-right-xl gap-4 ${
           isopen ? "left-0" : "-left-full absolute"
         }`}
       >

@@ -10,13 +10,12 @@ const AppLayout = () => {
       <div className="hidden md:block md:col-span-1 ">
         <Sidebar />
       </div>
-
       <Ressidebar />
 
       <Search />
 
-      <div className="col-span-5 md:col-span-4  bg-black ">
-        <div className=" flex items-center justify-center h-full">
+      <div className=" z-1 col-span-5 md:col-span-4  bg-black ">
+        <div className="z-2 relative  flex items-center justify-center h-full">
           <Outlet />
         </div>
       </div>

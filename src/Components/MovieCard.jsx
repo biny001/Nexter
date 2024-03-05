@@ -1,6 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ results, baseImageurl, imageurl }) => {
+  const navigate = useNavigate();
+
+  function handleClick(id) {
+    navigate(`/watch/${id}`);
+    console.log(id);
+  }
+
   return (
     <div className=" flex-[3] py-6 px-8   space-y-6 ">
       <h1>Movie List</h1>
@@ -10,6 +18,7 @@ const MovieCard = ({ results, baseImageurl, imageurl }) => {
             <div
               className=" flex flex-col rounded-2xl justify-center items-center"
               key={movie.id}
+              onClick={() => handleClick(movie?.id)}
             >
               <div className="relative h-max group items-center justify-center">
                 <img

@@ -13,7 +13,7 @@ const Sidebar = () => {
         >
           <img
             className=" "
-            src="src\assets\images\film.svg"
+            src="src/assets/images/film.svg"
           />
           <h1>Home</h1>
         </NavLink>
@@ -23,7 +23,7 @@ const Sidebar = () => {
             isActive ? "navlink bg-[#1e092a]" : "navlink "
           }
         >
-          <img src="src\assets\images\heart.svg" />
+          <img src="src/assets/images/heart.svg" />
           <h1>Favourites</h1>
         </NavLink>
         <NavLink
@@ -32,7 +32,7 @@ const Sidebar = () => {
           }
           to="/trending"
         >
-          <img src="src\assets\images\trending-up.svg" />
+          <img src="src/assets/images/trending-up.svg" />
           <h1>Trending</h1>
         </NavLink>
         <NavLink
@@ -41,7 +41,7 @@ const Sidebar = () => {
           }
           to="/comingsoon"
         >
-          <img src="src\assets\images\calendar.svg" />
+          <img src="src/assets/images/calendar.svg" />
           <h1>Coming Soon</h1>
         </NavLink>
       </div>

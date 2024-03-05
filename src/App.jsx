@@ -18,7 +18,7 @@ const App = () => {
             element={<Home />}
           />
           <Route
-            path="/watch:id"
+            path="/watch/:id"
             element={<Watch />}
           />
           <Route

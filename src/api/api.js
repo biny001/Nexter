@@ -24,3 +24,19 @@ export const fetchData = async () => {
     console.error("Error fetching movies:", err);
   }
 };
+
+export const fetchDetails = async (id) => {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+      options
+    );
+    if (!response.ok)
+      throw new Error(`Failed to fetch details. Status: ${response.status}`);
+    const detail = await response.json();
+    console.log(detail);
+    return detail;
+  } catch (err) {
+    console.log(err);
+  }
+};

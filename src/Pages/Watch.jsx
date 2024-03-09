@@ -25,9 +25,9 @@ const Watch = () => {
   }
 
   return (
-    <div className=" overflow-y-scroll overflow-x-hidden h-full">
+    <div className=" overflow-y-scroll py-24 overflow-x-hidden h-full ">
       <div
-        className={` w-full  h-max relative ${
+        className={` w-full  h-[max] relative ${
           show ? "flex flex-col items-center justify-center" : ""
         }`}
       >

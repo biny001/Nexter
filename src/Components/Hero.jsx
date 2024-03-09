@@ -19,7 +19,7 @@ const Hero = ({ images }) => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full overflow-y-hidden">
       <img
         src={images?.[currentImageIndex].url}
         alt={images?.[currentImageIndex].alt}
@@ -43,11 +43,11 @@ const Hero = ({ images }) => {
       </div>
 
       {/* Title, Overview, and Date */}
-      <h1 className=" absolute left-[10%] top-[40%] text-2xl">
+      <h1 className=" absolute left-[10%] sm:top-[40%] top-[30%] md:text-2xl sm:text-xl text-lg">
         {images?.[currentImageIndex].title} (
         {formatYear(images?.[currentImageIndex].date)})
       </h1>
-      <p className="py-2 absolute left-[10%] top-[50%] text-gray-300 text-xs md:text-sm lg:text-base xl:text-lg max-w-[80%] md:max-w-[70%] lg:max-w-[70%] xl:max-w-[70%] whitespace-normal overflow-auto">
+      <p className="py-2 absolute left-[10%] top-[40%] sm:top-[50%] text-gray-300   text-xs md:text-sm lg:text-base xl:text-lg max-w-[80%] md:max-w-[70%] lg:max-w-[70%] xl:max-w-[70%] whitespace-normal overflow-auto">
         {images?.[currentImageIndex].overview}
       </p>
     </div>

@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import { PiFilmSlateLight } from "react-icons/pi";
+import { CiHeart } from "react-icons/ci";
+import { IoIosTrendingUp } from "react-icons/io";
+import { CiCalendar } from "react-icons/ci";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { LiaTimesSolid } from "react-icons/lia";
+import { IoIosLogOut } from "react-icons/io";
 const Ressidebar = () => {
   const [isopen, setIsopen] = useState(false);
 
@@ -12,14 +18,9 @@ const Ressidebar = () => {
           isopen ? "left-[130px] z-[100000] top-3" : "left-3 top-3  "
         }`}
       >
-        <img
-          className=" rounded-full md:hidden  transition-all  duration-300 ease-in-out"
-          src={`${
-            isopen
-              ? "src/assets/images/cancel-x.svg"
-              : "src/assets/images/burger-menu.svg"
-          }`}
-        />
+        <div className="rounded-full md:hidden  transition-all  duration-300 ease-in-out">
+          {isopen ? <LiaTimesSolid /> : <RxHamburgerMenu />}
+        </div>
       </div>
       <div
         className={`md:hidden bg-primary-dark absolute h-full z-[1000] transition-all duration-300 ease-in-out px-4 py-10 flex flex-col shadow-right-xl gap-4 ${
@@ -34,10 +35,7 @@ const Ressidebar = () => {
             }
             to="/"
           >
-            <img
-              className=""
-              src="src/assets/images/film.svg"
-            />
+            <PiFilmSlateLight />
             <h1>Home</h1>
           </NavLink>
           <NavLink
@@ -46,7 +44,7 @@ const Ressidebar = () => {
               isActive ? "navlink bg-[#1e092a]" : "navlink"
             }
           >
-            <img src="src/assets/images/heart.svg" />
+            <CiHeart />
             <h1>Favourites</h1>
           </NavLink>
           <NavLink
@@ -55,7 +53,7 @@ const Ressidebar = () => {
             }
             to="/trending"
           >
-            <img src="src/assets/images/trending-up.svg" />
+            <IoIosTrendingUp />
             <h1>Trending</h1>
           </NavLink>
           <NavLink
@@ -64,13 +62,13 @@ const Ressidebar = () => {
             }
             to="/comingsoon"
           >
-            <img src="src/assets/images/calendar.svg" />
+            <CiCalendar />
             <h1>Coming Soon</h1>
           </NavLink>
         </div>
         <div>
           <div className="flex navlink gap-2 items-center">
-            <img src="src/assets/images/log-out.svg" />
+            <IoIosLogOut />
             <p>Logout</p>
           </div>
         </div>

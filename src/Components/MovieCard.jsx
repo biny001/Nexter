@@ -11,7 +11,7 @@ const MovieCard = ({ results, baseImageurl, imageurl }) => {
 
   return (
     <div className=" flex-[3] py-6 px-8   space-y-6 ">
-      <h1>Movie List</h1>
+      <h1>Trending</h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
         {results?.map((movie) => {
           return (

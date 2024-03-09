@@ -32,7 +32,7 @@ const Watch = () => {
         }`}
       >
         <img src={imageUrl} />
-        <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-98"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent      opacity-98"></div>
         {/* movie component */}
         {show ? (
           <MoviePlayer videoUrl={videoUrl} />

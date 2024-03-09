@@ -1,5 +1,9 @@
 import { NavLink } from "react-router-dom";
-
+import { PiFilmSlateLight } from "react-icons/pi";
+import { CiHeart } from "react-icons/ci";
+import { IoIosTrendingUp } from "react-icons/io";
+import { CiCalendar } from "react-icons/ci";
+import { IoIosLogOut } from "react-icons/io";
 const Sidebar = () => {
   return (
     <div className="hidden h-full   md:flex md:flex-col md:px-8 md:py-10 gap-4   ">
@@ -11,10 +15,7 @@ const Sidebar = () => {
           }
           to="/"
         >
-          <img
-            className=" "
-            src="src/assets/images/film.svg"
-          />
+          <PiFilmSlateLight />
           <h1>Home</h1>
         </NavLink>
         <NavLink
@@ -23,7 +24,7 @@ const Sidebar = () => {
             isActive ? "navlink bg-[#1e092a]" : "navlink "
           }
         >
-          <img src="src/assets/images/heart.svg" />
+          <CiHeart />
           <h1>Favourites</h1>
         </NavLink>
         <NavLink
@@ -32,7 +33,7 @@ const Sidebar = () => {
           }
           to="/trending"
         >
-          <img src="src/assets/images/trending-up.svg" />
+          <IoIosTrendingUp />
           <h1>Trending</h1>
         </NavLink>
         <NavLink
@@ -41,13 +42,13 @@ const Sidebar = () => {
           }
           to="/comingsoon"
         >
-          <img src="src/assets/images/calendar.svg" />
+          <CiCalendar />
           <h1>Coming Soon</h1>
         </NavLink>
       </div>
       <div>
         <div className="flex navlink     gap-2 items-center">
-          <img src="src/assets/images/log-out.svg" />
+          <IoIosLogOut />
           <p>Logout</p>
         </div>
       </div>

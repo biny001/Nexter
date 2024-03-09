@@ -19,6 +19,8 @@ const Home = () => {
     date: movie.release_date,
   }));
 
+  if (isPending) return <div>Loading...</div>;
+
   return (
     <div className=" flex flex-col   w-full justify-center items-center ">
       <Hero images={heroUrl} />

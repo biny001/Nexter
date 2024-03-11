@@ -3,6 +3,8 @@ import { fetchData } from "../api/api";
 import { useGetMovie } from "../react-query/queries";
 import Hero from "../Components/Hero";
 import MovieCard from "../Components/MovieCard";
+import SkeletonCardItem from "../Components/SkeletonCardItem";
+import SkeletonHero from "../Components/SkeletonHero";
 
 const Home = () => {
   const { data: results, isPending } = useGetMovie();
@@ -19,17 +21,31 @@ const Home = () => {
     date: movie.release_date,
   }));
 
-  if (isPending) return <div>Loading...</div>;
+  // if (isPending) return <div>Loading...</div>;
 
   return (
-    <div className=" flex flex-col   w-full justify-center items-center ">
-      <Hero images={heroUrl} />
-      <MovieCard
-        results={results}
-        isPending={isPending}
-        baseImageurl={baseImageurl}
-        imageUrl={imageUrl}
-      />
+    <div
+      className={`flex flex-col w-full justify-center items-center overflow-x-hidden  ${
+        isPending ? "" : ""
+      }`}
+    >
+      {isPending ? <SkeletonHero /> : <Hero images={heroUrl} />}
+      {/* Pass isPending to MovieCard component */}
+
+      {isPending ? (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 overflow-x-hidden">
+          {Array.from({ length: 12 }).map((_, index) => (
+            <SkeletonCardItem key={index} />
+          ))}
+        </div>
+      ) : (
+        <MovieCard
+          results={results}
+          isPending={isPending}
+          baseImageurl={baseImageurl}
+          imageUrl={imageUrl}
+        />
+      )}
     </div>
   );
 };

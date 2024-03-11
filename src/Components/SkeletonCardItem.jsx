@@ -13,15 +13,15 @@ const SkeletonCardItem = (props) => (
   >
     {/* Adjusted positioning of the loader elements */}
     <rect
-      x="25"
+      x="0"
       y="0"
       rx="16"
       ry="16"
-      width="200"
+      width="180"
       height="250"
     />
     <rect
-      x="68.5"
+      x="30.5"
       y="264"
       rx="3"
       ry="3"
